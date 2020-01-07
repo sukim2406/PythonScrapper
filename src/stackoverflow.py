@@ -38,7 +38,6 @@ def extract_stackoverflow_jobs(last_page):
         results = soup.find_all("div", {"class":"-job"})
         for result in results:
             job = extract_stackoverflow_components(result)
-            print(job)
             jobs.append(job)
         return jobs
 
@@ -46,4 +45,4 @@ def extract_stackoverflow_jobs(last_page):
 def get_jobs():
     last_page = extract_stackoverflow_pages()
     jobs = extract_stackoverflow_jobs(last_page)
-    return []
+    return jobs
